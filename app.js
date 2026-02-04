@@ -5,7 +5,22 @@ const jobs = [
     { id: 3, title: "Marketing Manager", company: "GrowthLoop", location: "New York", type: "Contract", salary: "$60k - $90k", category: "marketing", tags: ["SEO", "Content", "Strategy"] },
     { id: 4, title: "Data Analyst", company: "InsightsCo", location: "London", type: "Full-time", salary: "£50k - £75k", category: "tech", tags: ["Python", "SQL", "Tableau"] },
     { id: 5, title: "Product Researcher", company: "UserFirst", location: "Remote", type: "Full-time", salary: "$70k - $100k", category: "design", tags: ["User Research", "Testing", "Analytics"] },
-    { id: 6, title: "Financial Advisor", company: "WealthWise", location: "Chicago", type: "Full-time", salary: "$90k - $130k", category: "finance", tags: ["CPA", "Planning", "Investment"] }
+    { id: 6, title: "Financial Advisor", company: "WealthWise", location: "Chicago", type: "Full-time", salary: "$90k - $130k", category: "finance", tags: ["CPA", "Planning", "Investment"] },
+    { id: 7, title: "Asha Worker", company: "Community Health Dept", location: "Local District", type: "Full-time", salary: "₹10k - ₹15k", category: "community", tags: ["Healthcare", "Social Work"] },
+    { id: 8, title: "Home Teacher", company: "Sahayika Edu", location: "Local Area", type: "Part-time", salary: "₹8k - ₹12k", category: "community", tags: ["Teaching", "Elementary"] },
+    { id: 9, title: "Maths Tutor", company: "Private Instruction", location: "Hybrid", type: "Hourly", salary: "₹500/hr", category: "community", tags: ["Mathematics", "Coaching"] },
+    { id: 10, title: "Sewing Specialist", company: "CraftEmpower", location: "Home-based", type: "Contract", salary: "Commission based", category: "community", tags: ["Tailoring", "Design"] },
+    { id: 11, title: "Tiffin Service Manager", company: "HomeBites", location: "Local Area", type: "Self-Employed", salary: "₹20k - ₹35k", category: "community", tags: ["Cooking", "Management"] },
+    { id: 12, title: "Anganwadi Worker", company: "State Child Services", location: "Ward Level", type: "Full-time", salary: "₹12k - ₹18k", category: "community", tags: ["Childcare", "Nutrition"] },
+    { id: 13, title: "Elderly Care Assistant", company: "CareGivers", location: "Local Area", type: "Flexible", salary: "₹15k - ₹25k", category: "community", tags: ["Healthcare", "Compassion"] },
+    { id: 14, title: "Handicraft Artisan", company: "RuralArts", location: "Remote", type: "Contract", salary: "Project based", category: "community", tags: ["Crafts", "Culture"] },
+    { id: 15, title: "Local Area Coordinator", company: "Sahayika Outreach", location: "District", type: "Full-time", salary: "₹18k - ₹25k", category: "community", tags: ["Leadership", "Coordination"] },
+    { id: 16, title: "Primary School Assistant", company: "BrightStart Schools", location: "Locality", type: "Part-time", salary: "₹10k - ₹14k", category: "community", tags: ["Education", "Support"] },
+    { id: 17, title: "Yoga Instructor", company: "WellnessHome", location: "Hybrid", type: "Hourly", salary: "₹800/session", category: "community", tags: ["Wellness", "Fitness"] },
+    { id: 18, title: "Sustainable Farming Advisor", company: "AgriEmpower", location: "Rural Cluster", type: "Consultant", salary: "₹25k+", category: "community", tags: ["Farming", "Sustainability"] },
+    { id: 19, title: "Women's SHG Leader", company: "State Rural Mission", location: "Village Level", type: "Full-time", salary: "₹15k - ₹20k", category: "community", tags: ["Leadership", "Banking"] },
+    { id: 20, title: "Digital Literacy Trainer", company: "Sahayika Tech", location: "Local Hub", type: "Part-time", salary: "₹12k - ₹16k", category: "community", tags: ["Tech", "Training"] },
+    { id: 21, title: "Mental Health Peer Supporter", company: "MindWell", location: "Remote", type: "Flexible", salary: "₹15k - ₹22k", category: "community", tags: ["Mental Health", "Counseling"] }
 ];
 
 const communityPosts = {

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Hub | Sahayika</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body style="background: var(--bg-subtle);">
     <nav class="navbar">
         <div class="logo">
@@ -37,23 +39,38 @@
             <!-- Filters -->
             <aside class="glass-card" style="padding: 2rem; position: sticky; top: 120px;">
                 <h4 style="margin-bottom: 2rem;">Refine Search</h4>
-                
+
                 <div style="margin-bottom: 2rem;">
-                    <label style="display: block; font-weight: 800; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Keywords</label>
-                    <input type="text" placeholder="Job title, company..." style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-subtle); outline: none;">
+                    <label
+                        style="display: block; font-weight: 800; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Keywords</label>
+                    <input type="text" placeholder="Job title, company..."
+                        style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-subtle); outline: none;">
                 </div>
 
                 <div style="margin-bottom: 2rem;">
-                    <label style="display: block; font-weight: 800; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Role Type</label>
+                    <label
+                        style="display: block; font-weight: 800; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Role
+                        Type</label>
                     <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
-                            <input type="checkbox" checked style="accent-color: var(--primary); width: 18px; height: 18px;"> Technology
+                        <label
+                            style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" checked
+                                style="accent-color: var(--primary); width: 18px; height: 18px;"> Technology
                         </label>
-                        <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
-                            <input type="checkbox" checked style="accent-color: var(--primary); width: 18px; height: 18px;"> Design
+                        <label
+                            style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" checked
+                                style="accent-color: var(--primary); width: 18px; height: 18px;"> Community
                         </label>
-                        <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
-                            <input type="checkbox" style="accent-color: var(--primary); width: 18px; height: 18px;"> Finance
+                        <label
+                            style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" checked
+                                style="accent-color: var(--primary); width: 18px; height: 18px;"> Design
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" style="accent-color: var(--primary); width: 18px; height: 18px;">
+                            Finance
                         </label>
                     </div>
                 </div>
@@ -70,16 +87,18 @@
 
     <footer style="padding: 5rem 2rem; background: white; border-top: 1px solid var(--border);">
         <div style="text-align: center;">
-            <p style="color: var(--text-muted); font-weight: 600;">&copy; 2026 Sahayika Career Hub. empowering your journey.</p>
+            <p style="color: var(--text-muted); font-weight: 600;">&copy; 2026 Sahayika Career Hub. empowering your
+                journey.</p>
         </div>
     </footer>
 
     <script src="app.js"></script>
+    <script src="chatbot.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const grid = document.getElementById('jobsGridPage');
             const allJobs = [...jobs, ...jobs]; // Duplicate for full page
-            
+
             grid.innerHTML = allJobs.map(job => `
                 <div class="job-card glass-card">
                     <div class="job-card-header">
@@ -108,4 +127,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +42,8 @@
             font-size: 0.95rem;
         }
 
-        .sidebar-link:hover, .sidebar-link.active {
+        .sidebar-link:hover,
+        .sidebar-link.active {
             background: var(--primary-light);
             color: var(--primary);
             transform: translateX(5px);
@@ -67,8 +69,15 @@
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .stat-card {
@@ -172,22 +181,47 @@
             font-weight: 800;
         }
 
-        .status-success { background: #ecfdf5; color: #10b981; }
-        .status-pending { background: #fce7f3; color: var(--primary); }
+        .status-success {
+            background: #ecfdf5;
+            color: #10b981;
+        }
+
+        .status-pending {
+            background: #fce7f3;
+            color: var(--primary);
+        }
 
         @media (max-width: 992px) {
-            .sidebar { width: 90px; }
-            .sidebar span { display: none; }
-            .dashboard-content { margin-left: 90px; padding: 2rem; }
+            .sidebar {
+                width: 90px;
+            }
+
+            .sidebar span {
+                display: none;
+            }
+
+            .dashboard-content {
+                margin-left: 90px;
+                padding: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .sidebar { transform: translateX(-100%); }
-            .sidebar.active { transform: translateX(0); }
-            .dashboard-content { margin-left: 0; }
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .dashboard-content {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -197,7 +231,9 @@
         </div>
         <div class="nav-buttons">
             <div style="display: flex; align-items: center; gap: 1rem; margin-right: 1.5rem;">
-                <div style="width: 42px; height: 42px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--primary);">AS</div>
+                <div
+                    style="width: 42px; height: 42px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--primary);">
+                    AS</div>
                 <div style="display: none; flex-direction: column;">
                     <span style="font-weight: 800; font-size: 0.9rem;">Anjali Sharma</span>
                 </div>
@@ -234,7 +270,7 @@
                 <div class="card-header">
                     <h2 style="font-size: 2.25rem;">Welcome back, <span class="gradient-text">Anjali!</span> ✨</h2>
                 </div>
-                
+
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
                     <div class="stat-card">
                         <span class="stat-icon">🛡️</span>
@@ -253,7 +289,8 @@
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 3rem;">
                     <div class="glass-card">
                         <h4 style="margin-bottom: 2rem;">Recent Activity</h4>
                         <div id="recent-activity-list" style="display: flex; flex-direction: column; gap: 1.25rem;">
@@ -262,8 +299,10 @@
                     </div>
                     <div class="glass-card" style="background: var(--primary-light); border-color: transparent;">
                         <h4 style="margin-bottom: 1.5rem; color: var(--primary)">Personalized Tips</h4>
-                        <p style="color: var(--primary); font-weight: 600; line-height: 1.6;">"Your safety check-in is scheduled for 8:00 PM tonight. Make sure your live location sharing is active."</p>
-                        <button class="btn-primary" style="margin-top: 1.5rem; padding: 0.6rem 1.25rem;">Review Safety Settings</button>
+                        <p style="color: var(--primary); font-weight: 600; line-height: 1.6;">"Your safety check-in is
+                            scheduled for 8:00 PM tonight. Make sure your live location sharing is active."</p>
+                        <button class="btn-primary" style="margin-top: 1.5rem; padding: 0.6rem 1.25rem;">Review Safety
+                            Settings</button>
                     </div>
                 </div>
             </div>
@@ -275,10 +314,13 @@
                     <button class="btn-primary" onclick="window.location.href='safety.html'">Advanced Center</button>
                 </div>
                 <div class="glass-card" style="display: flex; align-items: center; gap: 3rem;">
-                    <div style="width: 120px; height: 120px; border-radius: 60px; background: #ecfdf5; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🛡️</div>
+                    <div
+                        style="width: 120px; height: 120px; border-radius: 60px; background: #ecfdf5; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">
+                        🛡️</div>
                     <div>
                         <h3>Live Guardian Active</h3>
-                        <p style="color: var(--text-muted); margin: 0.5rem 0 1.5rem;">Your device is currently being monitored by our secure servers.</p>
+                        <p style="color: var(--text-muted); margin: 0.5rem 0 1.5rem;">Your device is currently being
+                            monitored by our secure servers.</p>
                         <div style="display: flex; gap: 1rem;">
                             <span class="badge-status status-success">SOS Armed</span>
                             <span class="badge-status status-success">Location Public to Circle</span>
@@ -310,12 +352,13 @@
             </div>
 
             <!-- Placeholder for Learning/Mentorship... -->
-             <div id="learning" class="tab-content">
+            <div id="learning" class="tab-content">
                 <div class="card-header">
                     <h2>Skill <span class="gradient-text">Development</span></h2>
                     <button class="btn-primary" onclick="window.location.href='learning.html'">All Courses</button>
                 </div>
-                <div id="learning-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div id="learning-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                     <!-- Populated dynamically -->
                 </div>
             </div>
@@ -326,10 +369,13 @@
                 </div>
                 <div class="glass-card" style="display: flex; justify-content: space-between; align-items: center;">
                     <div style="display: flex; align-items: center; gap: 1.5rem;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👩‍🏫</div>
+                        <div
+                            style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            👩‍🏫</div>
                         <div>
                             <h4 style="margin: 0;">Dr. Linda K.</h4>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">Expertise: AI Policy & Ethics</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">Expertise: AI
+                                Policy & Ethics</p>
                         </div>
                     </div>
                     <button class="btn-outline">Open Chat</button>
@@ -345,7 +391,7 @@
         }
 
         function logout() {
-            if(confirm('Are you sure you want to logout?')) {
+            if (confirm('Are you sure you want to logout?')) {
                 localStorage.removeItem('sahayika_user');
                 window.location.href = 'index.html';
             }
@@ -366,7 +412,7 @@
 
         window.onload = () => {
             if (!localStorage.getItem('sahayika_user')) {
-                 window.location.href = 'index.html';
+                window.location.href = 'index.html';
             }
             renderDashboardData();
         };
@@ -423,5 +469,7 @@
             `).join('');
         }
     </script>
+    <script src="chatbot.js"></script>
 </body>
+
 </html>
