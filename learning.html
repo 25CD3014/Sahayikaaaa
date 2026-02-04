@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Pathways | Sahayika</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .featured-banner {
+            background: white;
+            border-radius: 40px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 2px solid var(--primary-light);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .featured-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        .featured-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+        }
+
+        .skill-grid-alt {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .featured-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 200px;
+                font-size: 5rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="background: var(--bg-subtle);">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none;">
+                <span class="logo-text">Sahayika</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="jobs.html">Career</a></li>
+            <li><a href="legal.html">Legal</a></li>
+            <li><a href="learning.html" class="active">Skills</a></li>
+        </ul>
+        <div class="nav-buttons" id="navButtons">
+            <button class="btn-outline" onclick="showModal('loginModal')">Login</button>
+            <button class="btn-primary" onclick="showModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+
+    <main class="section-section">
+        <header class="section-header">
+            <span class="badge">Never stop growing</span>
+            <h1 class="section-title">Learning <span class="gradient-text">Pathways</span></h1>
+            <p class="section-subtitle">Accelerate your career with expert-led courses and community mentorship.</p>
+        </header>
+
+        <div class="featured-banner">
+            <div class="featured-content">
+                <span class="badge" style="width: fit-content;">Hiring Spotlight</span>
+                <h2 style="font-size: 2.5rem; margin: 1.5rem 0;">UX/UI & Product Design Bootcamp</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem;">A 12-week intensive
+                    program designed to get you hired. Includes portfolio reviews and mock interviews with senior
+                    designers.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn-primary btn-large">Enroll Now</button>
+                    <button class="btn-outline btn-large">View Curriculum</button>
+                </div>
+            </div>
+            <div class="featured-image">🎨</div>
+        </div>
+
+        <h3 style="margin-bottom: 3rem; font-size: 2rem;">Explore Skills</h3>
+        <div class="skill-grid-alt" id="coursesGrid">
+            <!-- Dynamically Populated -->
+        </div>
+    </main>
+
+    <footer style="padding: 5rem 2rem; background: white; border-top: 1px solid var(--border); text-align: center;">
+        <p style="color: var(--text-muted); font-weight: 700;">&copy; 2026 Sahayika Learning. Future-proof your skills.
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('coursesGrid');
+            const courses = [
+                { title: "Leadership & Management", icon: "👔", enrolled: "5.2k", cat: "Business" },
+                { title: "Digital Marketing", icon: "📱", enrolled: "3.8k", cat: "Marketing" },
+                { title: "Public Speaking", icon: "🎤", enrolled: "2.9k", cat: "Soft Skills" },
+                { title: "Financial Literacy", icon: "💰", enrolled: "4.5k", cat: "Finance" },
+                { title: "Python for Data", icon: "🐍", enrolled: "3.1k", cat: "Tech" },
+                { title: "Personal Branding", icon: "✨", enrolled: "2.2k", cat: "Career" }
+            ];
+
+            grid.innerHTML = courses.map(course => `
+                <div class="skill-card glass-card" style="padding: 0;">
+                    <div class="skill-image" style="height: 140px; border-radius: 30px 30px 0 0; background: var(--primary-light); font-size: 3rem;">${course.icon}</div>
+                    <div class="skill-content" style="padding: 2rem;">
+                        <span style="color: var(--primary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">${course.cat}</span>
+                        <h4 style="margin: 0.5rem 0 1rem;">${course.title}</h4>
+                        <div class="skill-meta" style="margin-bottom: 1.5rem;">
+                            <span>⭐ 4.9</span>
+                            <span>👥 ${course.enrolled}</span>
+                        </div>
+                        <button class="btn-outline btn-full" onclick="alert('Enrolled in ${course.title}!')">Enroll Free</button>
+                    </div>
+                </div>
+            `).join('');
+
+            if (localStorage.getItem('sahayika_user')) {
+                document.getElementById('navButtons').innerHTML = `
+                    <button class="btn-primary" onclick="window.location.href='dashboard.html'">Go to Dashboard</button>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>

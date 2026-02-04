@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Center | Sahayika</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .safety-hero {
+            background: linear-gradient(180deg, var(--primary-light) 0%, var(--bg-main) 100%);
+            padding: 140px 2rem 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .safety-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(244, 114, 182, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .contact-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none;">
+                <span class="logo-text">Sahayika</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html" class="active">Safety</a></li>
+            <li><a href="jobs.html">Career</a></li>
+            <li><a href="legal.html">Legal</a></li>
+            <li><a href="learning.html">Skills</a></li>
+        </ul>
+        <div class="nav-buttons" id="navButtons">
+            <button class="btn-outline" onclick="showModal('loginModal')">Login</button>
+            <button class="btn-primary" onclick="showModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="safety-hero">
+            <span class="badge">Always Protected</span>
+            <h1 class="section-title">Emergency <span class="gradient-text">Guardian</span></h1>
+            <p class="section-subtitle">Real-time emergency response and predictive protection tools.</p>
+        </header>
+
+        <section class="section-section" style="padding-top: 0;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; align-items: start;">
+                <!-- Trigger Card -->
+                <div class="glass-card"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 4rem 2rem;">
+                    <h3 style="margin-bottom: 3rem;">Distress Signal</h3>
+                    <button class="sos-button" onclick="triggerSOS()">
+                        <div class="sos-pulse"></div>
+                        <span>SOS</span>
+                    </button>
+                    <p style="margin-top: 3rem; color: var(--text-muted); font-weight: 600;">
+                        Tap to notify your circle and authorities immediately.
+                    </p>
+                </div>
+
+                <!-- Contacts -->
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 2rem;">Trusted Circle</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="contact-card">
+                            <div class="contact-avatar">M</div>
+                            <div style="flex: 1;">
+                                <h5 style="font-size: 1.05rem;">Mom</h5>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">+91 98765 43210</p>
+                            </div>
+                            <span style="color: var(--success); font-weight: 800; font-size: 0.8rem;">ACTIVE</span>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-avatar">R</div>
+                            <div style="flex: 1;">
+                                <h5 style="font-size: 1.05rem;">Rahul (Brother)</h5>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">+91 98765 43211</p>
+                            </div>
+                            <span style="color: var(--success); font-weight: 800; font-size: 0.8rem;">ACTIVE</span>
+                        </div>
+                        <button class="btn-outline btn-full"
+                            style="margin-top: 1rem; border: 2px dashed var(--border-pink);">+ Add New Guardian</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem;">
+                <h3 style="margin-bottom: 2rem; font-size: 1.75rem;">Protective Tools</h3>
+                <div class="safety-features">
+                    <div class="safety-item glass-card">
+                        <div class="safety-icon">🚶‍♀️</div>
+                        <h4>Virtual Walk</h4>
+                        <p>Our AI monitors your path for deviations and alerts your circle if you stop unexpectedly.</p>
+                        <button class="btn-primary" style="margin-top: 1.5rem; width: 100%;">Start Walk</button>
+                    </div>
+                    <div class="safety-item glass-card">
+                        <div class="safety-icon">📞</div>
+                        <h4>Fake Call</h4>
+                        <p>Instantly trigger a realistic incoming call to exit uncomfortable social situations safely.
+                        </p>
+                        <button class="btn-outline" style="margin-top: 1.5rem; width: 100%;">Trigger Call</button>
+                    </div>
+                    <div class="safety-item glass-card">
+                        <div class="safety-icon">🎤</div>
+                        <h4>Evidence Record</h4>
+                        <p>Voice-activated recording that streams audio directly to our secure cloud vault.</p>
+                        <button class="btn-outline" style="margin-top: 1.5rem; width: 100%;">Enable Listening</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: var(--bg-subtle); padding: 5rem 2rem;">
+        <div style="text-align: center; border-top: 1px solid var(--border); padding-top: 3rem;">
+            <p style="color: var(--text-muted); font-weight: 600;">&copy; 2026 Sahayika Platform. Built for your safety.
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('sahayika_user')) {
+                document.getElementById('navButtons').innerHTML = `
+                    <button class="btn-primary" onclick="window.location.href='dashboard.html'">Go to Dashboard</button>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>

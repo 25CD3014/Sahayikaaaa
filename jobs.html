@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Hub | Sahayika</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background: var(--bg-subtle);">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none;">
+                <span class="logo-text">Sahayika</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="jobs.html" class="active">Career</a></li>
+            <li><a href="legal.html">Legal</a></li>
+            <li><a href="learning.html">Skills</a></li>
+        </ul>
+        <div class="nav-buttons" id="navButtons">
+            <button class="btn-outline" onclick="showModal('loginModal')">Login</button>
+            <button class="btn-primary" onclick="showModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+
+    <main class="section-section">
+        <header class="section-header">
+            <span class="badge">Opportunity awaits</span>
+            <h1 class="section-title">Career <span class="gradient-text">Pathways</span></h1>
+            <p class="section-subtitle">Curated roles from verified, inclusive companies committed to gender equity.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: start;">
+            <!-- Filters -->
+            <aside class="glass-card" style="padding: 2rem; position: sticky; top: 120px;">
+                <h4 style="margin-bottom: 2rem;">Refine Search</h4>
+                
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; font-weight: 800; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Keywords</label>
+                    <input type="text" placeholder="Job title, company..." style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-subtle); outline: none;">
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; font-weight: 800; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Role Type</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" checked style="accent-color: var(--primary); width: 18px; height: 18px;"> Technology
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" checked style="accent-color: var(--primary); width: 18px; height: 18px;"> Design
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" style="accent-color: var(--primary); width: 18px; height: 18px;"> Finance
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn-primary btn-full">Apply Filters</button>
+            </aside>
+
+            <!-- Jobs -->
+            <div id="jobsGridPage" class="jobs-grid">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 5rem 2rem; background: white; border-top: 1px solid var(--border);">
+        <div style="text-align: center;">
+            <p style="color: var(--text-muted); font-weight: 600;">&copy; 2026 Sahayika Career Hub. empowering your journey.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('jobsGridPage');
+            const allJobs = [...jobs, ...jobs]; // Duplicate for full page
+            
+            grid.innerHTML = allJobs.map(job => `
+                <div class="job-card glass-card">
+                    <div class="job-card-header">
+                        <div>
+                            <h4 class="job-title">${job.title}</h4>
+                            <p class="job-company">${job.company}</p>
+                        </div>
+                        <span class="job-salary" style="color: var(--primary); font-weight: 800;">${job.salary}</span>
+                    </div>
+                    <div class="job-meta" style="margin: 1.5rem 0;">
+                        <div class="job-meta-item">📍 ${job.location}</div>
+                        <div class="job-meta-item">🕒 ${job.type}</div>
+                    </div>
+                    <div class="job-tags" style="margin-bottom: 2rem;">
+                        ${job.tags.map(tag => `<span class="job-tag">${tag}</span>`).join('')}
+                    </div>
+                    <button class="btn-primary btn-full" onclick="applyJob('${job.title}', '${job.company}')">Quick Apply</button>
+                </div>
+            `).join('');
+
+            if (localStorage.getItem('sahayika_user')) {
+                document.getElementById('navButtons').innerHTML = `
+                    <button class="btn-primary" onclick="window.location.href='dashboard.html'">Go to Dashboard</button>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

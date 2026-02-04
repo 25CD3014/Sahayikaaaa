@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Resources | Sahayika</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-header {
+            background: linear-gradient(180deg, var(--primary-light) 0%, var(--bg-main) 100%);
+            padding: 140px 2rem 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .legal-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(244, 114, 182, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .advice-banner {
+            background: white;
+            border-radius: 40px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            border: 2px solid var(--primary-light);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .advice-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 40px 40px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .advice-banner {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="background: var(--bg-subtle);">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none;">
+                <span class="logo-text">Sahayika</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="jobs.html">Career</a></li>
+            <li><a href="legal.html" class="active">Legal</a></li>
+            <li><a href="learning.html">Skills</a></li>
+        </ul>
+        <div class="nav-buttons" id="navButtons">
+            <button class="btn-outline" onclick="showModal('loginModal')">Login</button>
+            <button class="btn-primary" onclick="showModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="legal-header">
+            <span class="badge">Know Your Rights</span>
+            <h1 class="section-title">Legal <span class="gradient-text">Empowerment</span></h1>
+            <p class="section-subtitle">Simplified legal education and direct access to gender-sensitive advocates.</p>
+        </header>
+
+        <section class="section-section" style="padding-top: 0;">
+            <div class="advice-banner">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Need Pro-Bono Advice?</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem;">Connect with our
+                        network of volunteer lawyers specialized in workplace equity and women's rights.</p>
+                    <form onsubmit="event.preventDefault(); alert('Consultation request sent!');"
+                        style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="text" placeholder="Briefly describe your situation"
+                            style="padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-subtle); outline: none;">
+                        <button class="btn-primary btn-large">Request Private Call</button>
+                    </form>
+                </div>
+                <div
+                    style="background: var(--primary-light); height: 100%; border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+                    ⚖️</div>
+            </div>
+
+            <div style="margin-top: 6rem;">
+                <h3 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">Essential Knowledge Base</h3>
+                <div class="legal-cards">
+                    <div class="legal-card glass-card">
+                        <div class="legal-number">01</div>
+                        <h4>Workplace Rights</h4>
+                        <p>Equal pay provisions, maternity security, and harassment reporting protocols.</p>
+                        <button class="learn-more">Open Handbook</button>
+                    </div>
+                    <div class="legal-card glass-card">
+                        <div class="legal-number">02</div>
+                        <h4>Digital Rights</h4>
+                        <p>Protection against cyber-stalking, defamation, and non-consensual image sharing.</p>
+                        <button class="learn-more">Open Handbook</button>
+                    </div>
+                    <div class="legal-card glass-card">
+                        <div class="legal-number">03</div>
+                        <h4>Family Law</h4>
+                        <p>Comprehensive guides on property inheritance, custody, and protective orders.</p>
+                        <button class="learn-more">Open Handbook</button>
+                    </div>
+                    <div class="legal-card glass-card">
+                        <div class="legal-number">04</div>
+                        <h4>Zero FIR Guide</h4>
+                        <p>Step-by-step procedure for filing an FIR at any station regardless of jurisdiction.</p>
+                        <button class="learn-more">Open Handbook</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 5rem 2rem; background: white; border-top: 1px solid var(--border); text-align: center;">
+        <p style="color: var(--text-muted); font-weight: 700;">&copy; 2026 Sahayika Legal. Knowledge is power.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('sahayika_user')) {
+                document.getElementById('navButtons').innerHTML = `
+                    <button class="btn-primary" onclick="window.location.href='dashboard.html'">Go to Dashboard</button>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>
